@@ -295,7 +295,9 @@ public class KioskGui {
         btnSubmit.setBounds(212, 654, 88, 29);
         frame.getContentPane().add(btnSubmit);
         */
-        
+	
+	//ADD BUTTON 
+	//ADD BUTTON        
         
 
     //    startRealTimeClock(); 
