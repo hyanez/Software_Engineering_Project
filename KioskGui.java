@@ -302,3 +302,5 @@ public class KioskGui {
         //this.setLocationRelativeTo(null);
     }
 }
+
+//ADD BUTTON 
