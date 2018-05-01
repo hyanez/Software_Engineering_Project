@@ -296,11 +296,10 @@ public class KioskGui {
         frame.getContentPane().add(btnSubmit);
         */
         
-        
+	//ADD BUTTON 	        
 
     //    startRealTimeClock(); 
         //this.setLocationRelativeTo(null);
     }
 }
 
-//ADD BUTTON 
