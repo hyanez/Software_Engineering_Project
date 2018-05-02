@@ -295,14 +295,18 @@ public class KioskGui {
         btnSubmit.setBounds(212, 654, 88, 29);
         frame.getContentPane().add(btnSubmit);
         */
+<<<<<<< HEAD
 	
 	//ADD BUTTON 
 	//ADD BUTTON        
         
+=======
+        
+	//ADD BUTTON 	        
+>>>>>>> master
 
     //    startRealTimeClock(); 
         //this.setLocationRelativeTo(null);
     }
 }
 
-//ADD BUTTON 
