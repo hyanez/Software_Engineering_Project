@@ -1,4 +1,4 @@
-//BRENDA 
+//BRENDA and HUGO YANEZ 
 package kioskGui;
 
 import java.awt.EventQueue;
