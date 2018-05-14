@@ -1,14 +1,11 @@
-//BRENDA and HUGO YANEZ 
 package kioskGui;
+
 
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
-
-//import kioskGUI.fileIO;
-//import kioskGUI.socketUtils;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -28,6 +25,7 @@ import java.awt.Font;
 import java.awt.Color;
 import java.awt.SystemColor;
 import java.util.Date;
+import java.awt.BorderLayout;
 import java.awt.Checkbox;
 import javax.swing.JCheckBox;
 import javax.swing.JScrollBar;
@@ -37,7 +35,7 @@ public class KioskGui {
 
     private JFrame frame;
     private JTextField Payment;
-    double total = 0.00;
+    //double total = 0.00;
     public static JTextArea txtrTime;
 
     /**
@@ -61,36 +59,7 @@ public class KioskGui {
      */
     
     
-/*    private void startRealTimeClock()
-      {    
-           Thread refreshClock = new Thread()
-           {
-              public void run()
-              {   
-                 while (true)
-                 {                       
-                       Date date = new Date();
-                       String str = String.format("    %tc", date);
-                         
-                       txtrTime.setText("");
-                       txtrTime.append(str);
-                       txtrTime.repaint();
-                       
-                        try
-                        {
-                           sleep(5000L);
-                        }
-                        catch (InterruptedException e)
-                       {
-                           // TODO Auto-generated catch block
-                          e.printStackTrace();
-                       }
-                 } // end while true 
-             }
-          };
 
-        refreshClock.start();
-      }*/
     
     public KioskGui() {
         initialize();
@@ -162,7 +131,7 @@ public class KioskGui {
         });
         
         //Food item buttons
-        JButton btnBurger = new JButton("Burger");
+        /*JButton btnBurger = new JButton("Burger");
         btnBurger.setBounds(6, 77, 202, 190);
         frame.getContentPane().add(btnBurger);
         btnBurger.addActionListener(new ActionListener() 
@@ -175,12 +144,27 @@ public class KioskGui {
                 txtpnTotalDisplay.setText(formatter.format(total));
                 txtpnTotalDisplay.repaint();
             }
-        });
+        });*/
         
-        JButton btnFries = new JButton("Sides");
-        btnFries.setBounds(6, 279, 202, 190);
-        frame.getContentPane().add(btnFries);    
-        btnFries.addActionListener(new ActionListener() 
+       
+		// Burger Button
+		JButton btnBurger = new JButton("Burger");
+		btnBurger.setBounds(6, 77, 202, 190);
+		frame.getContentPane().add(btnBurger);
+		btnBurger.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+				//frame.dispose();
+				new Burgers();
+			}
+		});
+		
+
+        
+        JButton btnSides = new JButton("Sides");
+        btnSides.setBounds(6, 279, 202, 190);
+        frame.getContentPane().add(btnSides);    
+        /*btnSides.addActionListener(new ActionListener() 
         {
             public void actionPerformed(ActionEvent e) 
             {
@@ -190,13 +174,13 @@ public class KioskGui {
                 txtpnTotalDisplay.setText(formatter.format(total));
                 txtpnTotalDisplay.repaint();
             }
-        });
+        });*/
         
         JButton btnDrink = new JButton("Drink");
         btnDrink.setBounds(6, 480, 202, 185);
         frame.getContentPane().add(btnDrink);
         
-        btnDrink.addActionListener(new ActionListener() 
+        /*btnDrink.addActionListener(new ActionListener() 
         {
             public void actionPerformed(ActionEvent e) 
             {
@@ -206,7 +190,7 @@ public class KioskGui {
                 txtpnTotalDisplay.setText(formatter.format(total));
                 txtpnTotalDisplay.repaint();
             }
-        });
+        });*/
         
         JTextArea txtrTime = new JTextArea();
         txtrTime.setFont(new Font("AppleGothic", Font.BOLD, 20));
@@ -237,77 +221,5 @@ public class KioskGui {
         textPaneComment.setBounds(220, 541, 249, 111);
         frame.getContentPane().add(textPaneComment);
         
-        
-        /*JButton btnSubmit = new JButton("Submit");
-		btnSubmit.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) 
-			{
-				fileIO fl = new fileIO();
-				fl.wrTransactionData(textField.getText(), textField_1.getText(), textField_2.getText(), textField_3.getText(), textField_4.getText(), textField_5.getText(), textField_6.getText());
-				
-				Thread t = new Thread(new Runnable() {
-					public void run() {
-						socketUtils su = new socketUtils();
-						
-						if(su.socketConnect() == true) {
-							su.sendMessage(textField.getText() + "," + 
-						    textField_1.getText() + "," + 
-							textField_2.getText() + "," +
-							textField_3.getText() + "," +
-							textField_4.getText() + "," +
-							textField_5.getText() + "," +
-							textField_6.getText());
-							
-							String recvMsgStr= su.recvMessage();
-							su.sendMessage("QUIT>");
-							
-							su.closeSocket();
-							
-							JOptionPane.showMessageDialog(null,
-									"Message:" + recvMsgStr,
-									"Client",
-									JOptionPane.WARNING_MESSAGE);
-						}
-						else {
-							JOptionPane.showMessageDialog(null, 
-									"ERROR: Connection to socket server is down!",
-									"Client",
-									JOptionPane.WARNING_MESSAGE);
-						}
-					}
-				});
-				t.start();
-				try {
-					Thread.sleep(500);
-				}
-				catch(InterruptedException e1){
-						//TODO Auto-generated catch block
-					    e1.printStackTrace();
-				}
-				textField.setText(""); //2 parameters, First and Last name
-				textField_1.setText("");
-				textField_2.setText("");
-				textField_3.setText("");
-				textField_4.setText("");
-				textField_5.setText("");
-				textField_6.setText("");
-			}
-		});
-        btnSubmit.setBounds(212, 654, 88, 29);
-        frame.getContentPane().add(btnSubmit);
-        */
-<<<<<<< HEAD
-	
-	//ADD BUTTON 
-	//ADD BUTTON        
-        
-=======
-        
-	//ADD BUTTON 	        
->>>>>>> master
-
-    //    startRealTimeClock(); 
-        //this.setLocationRelativeTo(null);
     }
 }
-
